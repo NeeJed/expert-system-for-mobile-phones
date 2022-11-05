@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Экспертная система для выбора мобильного телефона</title>
+  </head>
+  <body>
+        <div id="root" style="margin-bottom: 200px"></div>
+        <div class="filter-container">
+          <div class="filter" id="filter">
+            <label for="brand">Бренд</label>
+            <select name="brand" id="filterSelectBrand">
+            </select>
+            <label for="releaseDate">Дата выпуска</label>
+            <select name="releaseDate" id="filterSelectReleaseDate">
+            </select>
+            <label for="color">Цвет</label>
+            <select name="color" id="filterSelectColor">
+            </select>
+            <label for="price">Цена</label>
+            <select name="price" id="filterSelectPrice">
+              <option value="10000">До 10000 рублей</option>
+              <option value="30000">До 30000 рублей</option>
+              <option value="50000">До 50000 рублей</option>
+              <option value="100000">До 100000 рублей</option>
+              <option value="1000000">Все</option>
+            </select>
+            <label for="memory">Внутренняя память</label>
+            <select name="memory" id="filterSelectMemory">
+            </select>
+          </div>
+          <button class="filter-submit" id="filterSubmit">Применить</button>
+          <button class="filter-clear" id="filterClear">Очистить</button>
+        </div>
+        <div id="base">
+        </div>
+    <!--
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
