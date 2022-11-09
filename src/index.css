@@ -8,78 +8,95 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 
 body {
-  position: relative;
-  margin: 0;
+position: relative;
+margin: 0;
 }
 
 .filter-container {
-  z-index: 2;
-  width: auto;
-  height: 200px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  right: 50%;
+z-index: 2;
+width: auto;
+height: 200px;
+position: fixed;
+top: 0;
+left: 50%;
+right: 50%;
 }
 
 .filter {
-  width: 760px;
-  height: 170px;
-  background: black;
-  margin: 0 0 0 -380px;
-  padding: 15px;
+width: 760px;
+height: 100px;
+background: lightgray;
+margin: 0 0 0 -380px;
+padding: 15px;
+}
+.filter select {
+width: 100px;
 }
 
 .filter-submit, .filter-clear {
-  position: fixed;
-  width: 150px;
-  top: 160px;
-  left: 50%;
-  right: 50%;
-  margin: 0 0 0 75px;
+position: fixed;
+width: 150px;
+top: 90px;
+left: 50%;
+right: 50%;
+margin: 0 0 0 75px;
 }
 
 .filter-clear {
-  margin: 0 0 0 -150px;
+margin: 0 0 0 -150px;
 }
 
 label {
-  color: white;
+color: black;
 }
 
 .phone-container {
-  position: relative;
-  max-width: 700px;
-  min-width: 600px;
-  height: 400px;
-  margin: 0 auto 0 auto;
-  padding: 30px 50px 0px 50px;
+position: relative;
+max-width: 700px;
+min-width: 600px;
+height: 400px;
+margin: 0 auto 0 auto;
+padding: 30px 50px 0px 50px;
 }
 
+.phone-image {
+position: absolute;
+margin-left: 300px;
+max-height: 400px;
+}
 .descElem {
-  font-weight: 400;
-  font-size: 1.2em;
-  color: rgb(31, 31, 31);
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 0.2em;
+font-weight: 400;
+font-size: 1.2em;
+color: rgb(31, 31, 31);
+font-family: Arial, Helvetica, sans-serif;
+margin-bottom: 0.2em;
 }
 .descElemPrice {
-  background-color: rgb(255, 203, 203);
-  font-weight: 600;
-  color: black;
+background-color: rgb(255, 203, 203);
+font-weight: 600;
+color: black;
+border-radius: 20px;
+text-align: center;
 }
 .buyButton {
-  background-color: rgb(168, 60, 60);
-  font-weight: 600;
-  font-size: 1em;
-  color: rgb(255, 255, 255);
-  height: 2em;
-  width: 8em;
-  border: 0;
-  border-radius: 1em;
+position: absolute;
+background-color: rgb(168, 60, 60);
+font-weight: 600;
+font-size: 1em;
+color: rgb(255, 255, 255);
+height: 2em;
+width: 8em;
+bottom: 0;
+border: 0;
+border-radius: 1em;
+}
+
+.buyButton:hover {
+background-color: rgb(148, 50, 50);
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }

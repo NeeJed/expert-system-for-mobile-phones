@@ -48,9 +48,11 @@ function addPhone() {
         let phoneId = `phoneid${i+1}`;
         let base = document.getElementById("base");
         let phoneDiv = document.createElement("div");
+        
         phoneDiv.id = phoneId;
         phoneDiv.classList.add("phone-container");
         document.body.insertBefore(phoneDiv, base);
+        
         addPhoneImage(phoneId, i, phoneDiv);
         addPhoneDescription(phoneId, i, phoneDiv);
         addPhoneBuyButton(phoneId, i, phoneDiv);
@@ -64,11 +66,11 @@ function addPhoneBuyButton(phoneId, i, phoneDiv) {
     phoneDiv.appendChild(phoneBuyButton);
     phoneBuyButton.id = `${phoneId}BuyButton`;
     phoneBuyButton.innerHTML = "Купить";
+    
     phoneBuyButton.onclick = function() {
         window.open(`${parsedData.Phones[i].source}`,'_blank')
     };
-    phoneBuyButton.style.position = "absolute";
-    phoneBuyButton.style.bottom= "0";
+    
     phoneBuyButton.classList.add("buyButton");
 }
 
@@ -115,12 +117,18 @@ function addPhoneDescription(phoneId, i, phoneDiv) {
 
 function addPhoneImage(phoneId, i, phoneDiv) {
     let phoneImage = document.createElement("img");
-    phoneImage.id = `${phoneId}Image`;
-    phoneImage.src = parsedData.Phones[i].imageSrc;
     phoneDiv.appendChild(phoneImage);
-    phoneImage.style.position = "absolute";
-    phoneImage.style.marginLeft = "300px";
-    phoneImage.style.maxHeight = "400px";
+    phoneImage.id = `${phoneId}Image`;
+
+    phoneImage.src = parsedData.Phones[i].imageSrc;
+    phoneImage.classList.add("phone-image");
+}
+
+let arr = [];
+function sortelems(i) {
+    arr.push(parsedData.Phones[i].releaseDate);
+    arr.sort();
+    arr = arr.filter((item, index) => arr.indexOf(item) === index);
 }
 
 function addFilterElem(phoneId, i, phoneDiv) {
@@ -136,6 +144,7 @@ function addFilterElem(phoneId, i, phoneDiv) {
     }
     let filterSelectReleaseDate = document.getElementById("filterSelectReleaseDate");
     let filterSelectReleaseDateElem = document.createElement("option");
+    sortelems(i); // да как это сделать то
     filterSelectReleaseDateElem.value = parsedData.Phones[i].releaseDate;
     filterSelectReleaseDateElem.innerHTML = parsedData.Phones[i].releaseDate;
     filterSelectReleaseDate.appendChild(filterSelectReleaseDateElem);
@@ -144,6 +153,7 @@ function addFilterElem(phoneId, i, phoneDiv) {
             filterSelectReleaseDateElem.style.display = "none";
         }
     }
+
     let filterSelectColor = document.getElementById("filterSelectColor");
     let filterSelectColorElem = document.createElement("option");
     filterSelectColorElem.value = parsedData.Phones[i].color;
@@ -167,11 +177,29 @@ function addFilterElem(phoneId, i, phoneDiv) {
         }
     }
 
-    filterSelectBrand.value = "";
-    filterSelectReleaseDate.value = "";
-    filterSelectColor.value = "";
-    filterSelectPrice.value = "";
-    filterSelectMemory.value = "";
+    let filterSelectCamera = document.getElementById("filterSelectCamera");
+    let filterSelectCameraElem = document.createElement("option");
+    filterSelectCameraElem.value = parsedData.Phones[i].camera;
+    filterSelectCameraElem.innerHTML = parsedData.Phones[i].camera;
+    filterSelectCamera.appendChild(filterSelectCameraElem);
+    for (i = 0; i < filterSelectCamera.length-1; i++) {
+        if (filterSelectCameraElem.value === filterSelectCamera[i].value){
+            filterSelectCameraElem.style.display = "none";
+        }
+    }
+
+    let filterSelectProcessor = document.getElementById("filterSelectProcessor");
+    let filterSelectProcessorElem = document.createElement("option");
+    filterSelectProcessorElem.value = parsedData.Phones[i].processor;
+    filterSelectProcessorElem.innerHTML = parsedData.Phones[i].processor;
+    filterSelectProcessor.appendChild(filterSelectProcessorElem);
+    for (i = 0; i < filterSelectProcessor.length-1; i++) {
+        if (filterSelectProcessorElem.value === filterSelectProcessor[i].value){
+            filterSelectProcessorElem.style.display = "none";
+        }
+    }
+
+    clearFilterSelects();
 }
 
 document.getElementById("filterSubmit").onclick = function() {
@@ -184,6 +212,9 @@ document.getElementById("filterSubmit").onclick = function() {
     let submitColor = document.getElementById("filterSelectColor").value;
     let submitPrice = document.getElementById("filterSelectPrice").value;
     let submitMemory = document.getElementById("filterSelectMemory").value;
+    let submitCamera = document.getElementById("filterSelectCamera").value;
+    let submitProcessor = document.getElementById("filterSelectProcessor").value;
+
     for (let i = 0; i < parsedData.Phones.length; i++) {
         if (submitBrand != parsedData.Phones[i].brand && submitBrand != "") {
             document.getElementById(`phoneid${i+1}`).style.display = "none";
@@ -200,7 +231,22 @@ document.getElementById("filterSubmit").onclick = function() {
         if (submitMemory != parsedData.Phones[i].memory && submitMemory != "") {
             document.getElementById(`phoneid${i+1}`).style.display = "none";
         }
+        if (submitCamera != parsedData.Phones[i].camera && submitCamera != "") {
+            document.getElementById(`phoneid${i+1}`).style.display = "none";
+        }
+        if (submitProcessor != parsedData.Phones[i].processor && submitProcessor != "") {
+            document.getElementById(`phoneid${i+1}`).style.display = "none";
+        }
     }
+}
+
+function clearFilterSelects() {
+    let allSelects = Array.from(document.getElementById("filter").childNodes);
+    allSelects.map((selectItem) => {
+        if (document.querySelectorAll('[id*="filterSelect"]')) {
+            selectItem.value = "";
+        }
+    })
 }
 
 document.getElementById("filterClear").onclick = function() {
@@ -208,32 +254,6 @@ document.getElementById("filterClear").onclick = function() {
     for (let i = 0; i < phoneBlock.length; i++) {
         phoneBlock[i].style.display = "block";
     }
-    document.getElementById("filterSelectBrand").value = "";
-    document.getElementById("filterSelectReleaseDate").value = "";
-    document.getElementById("filterSelectColor").value = "";
-    document.getElementById("filterSelectPrice").value = "";
-    document.getElementById("filterSelectMemory").value = "";
+    clearFilterSelects();
 }
-
-
-// var img = document.getElementsByTagName('img');
-// var div = document.createElement('div');
-// for (var i = 0; i < img.length; i++) {
-//     if (img[i].width > 300 && img.src != '') {
-//         var newImg = document.createElement('img');
-//         newImg.style.width = '250px';
-//         newImg.src = img[i].src;
-//         var a = document.createElement('a');
-//         a.setAttribute('href', img[i].src);
-//         a.setAttribute('target', '_blank');
-//         a.appendChild(newImg);
-//         div.appendChild(a);
-//     }
-// }
-
-// document.body.insertBefore(div, document.body.firstChild);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
