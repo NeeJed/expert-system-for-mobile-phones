@@ -23,6 +23,10 @@ function getFile(fileName) {
     request.send();
 }
 
+function sortIntegers(a, b) {
+    return a - b;
+}
+
 // fetch("./data.json")
 // .then(response => {
 //    return response.json();
@@ -45,7 +49,7 @@ function parse(obj) {
 // })();
 function addPhone() {
     for (let i = 0; i < Object.keys(parsedData.Phones).length; i++) {
-        let phoneId = `phoneid${i+1}`;
+        let phoneId = `phoneid${i}`;
         let base = document.getElementById("base");
         let phoneDiv = document.createElement("div");
         
@@ -53,25 +57,43 @@ function addPhone() {
         phoneDiv.classList.add("phone-container");
         document.body.insertBefore(phoneDiv, base);
         
-        addPhoneImage(phoneId, i, phoneDiv);
+        // перенести за цикл
         addPhoneDescription(phoneId, i, phoneDiv);
-        addPhoneBuyButton(phoneId, i, phoneDiv);
-        addFilterElem(phoneId, i, phoneDiv);
     }
+    addPhoneBuyButton();
+    addPhoneImage();
+
+    addFilterElem();
+
     console.log(parsedData.Phones);
 }
 
-function addPhoneBuyButton(phoneId, i, phoneDiv) {
-    let phoneBuyButton = document.createElement("button");
-    phoneDiv.appendChild(phoneBuyButton);
-    phoneBuyButton.id = `${phoneId}BuyButton`;
-    phoneBuyButton.innerHTML = "Купить";
-    
-    phoneBuyButton.onclick = function() {
-        window.open(`${parsedData.Phones[i].source}`,'_blank')
-    };
-    
-    phoneBuyButton.classList.add("buyButton");
+function addPhoneBuyButton() {
+    for (let i = 0; i < Object.keys(parsedData.Phones).length; i++) {
+        let phoneBuyButton = document.createElement("button");
+        let allPhoneDivs = document.querySelectorAll(".phone-container");
+        allPhoneDivs[i].appendChild(phoneBuyButton);
+        phoneBuyButton.id = `${allPhoneDivs[i].id}BuyButton`;
+        phoneBuyButton.innerHTML = "Купить";
+        
+        phoneBuyButton.onclick = function() {
+            window.open(`${parsedData.Phones[i].source}`,'_blank')
+        };
+
+        phoneBuyButton.classList.add("buyButton");
+    }
+}
+
+function addPhoneImage() {
+    for (let i = 0; i < Object.keys(parsedData.Phones).length; i++) {
+        let phoneImage = document.createElement("img");
+        let allPhoneDivs = document.querySelectorAll(".phone-container");
+        allPhoneDivs[i].appendChild(phoneImage);
+        phoneImage.id = `${allPhoneDivs[i].id}Image`;
+
+        phoneImage.src = parsedData.Phones[i].imageSrc;
+        phoneImage.classList.add("phone-image");
+    }
 }
 
 function addPhoneDescription(phoneId, i, phoneDiv) {
@@ -115,88 +137,82 @@ function addPhoneDescription(phoneId, i, phoneDiv) {
     }
 }
 
-function addPhoneImage(phoneId, i, phoneDiv) {
-    let phoneImage = document.createElement("img");
-    phoneDiv.appendChild(phoneImage);
-    phoneImage.id = `${phoneId}Image`;
+let arrayOfReleaseDates = [];
+let arrayOfReleaseDatesUpdated = [];
+let arrayOfMemory = [];
+let arrayOfMemoryUpdated = [];
+let arrayOfCamera = []
+let arrayOfCameraUpdated = []
 
-    phoneImage.src = parsedData.Phones[i].imageSrc;
-    phoneImage.classList.add("phone-image");
-}
-
-let arr = [];
-function sortelems(i) {
-    arr.push(parsedData.Phones[i].releaseDate);
-    arr.sort();
-    arr = arr.filter((item, index) => arr.indexOf(item) === index);
-}
-
-function addFilterElem(phoneId, i, phoneDiv) {
-    let filterSelectBrand = document.getElementById("filterSelectBrand");
-    let filterSelectBrandElem = document.createElement("option");
-    filterSelectBrandElem.value = parsedData.Phones[i].brand;
-    filterSelectBrandElem.innerHTML = parsedData.Phones[i].brand;
-    filterSelectBrand.appendChild(filterSelectBrandElem);
-    for (i = 0; i < filterSelectBrand.length-1; i++) {
-        if (filterSelectBrandElem.value === filterSelectBrand[i].value){
-            filterSelectBrandElem.style.display = "none";
+function addFilterElem() {
+    for (let i = 0; i < Object.keys(parsedData.Phones).length; i++) {
+        let filterSelectBrand = document.getElementById("filterSelectBrand");
+        let filterSelectBrandElem = document.createElement("option");
+        filterSelectBrandElem.value = parsedData.Phones[i].brand;
+        filterSelectBrandElem.innerHTML = parsedData.Phones[i].brand;
+        filterSelectBrand.appendChild(filterSelectBrandElem);
+        for (i = 0; i < filterSelectBrand.length-1; i++) {
+            if (filterSelectBrandElem.value === filterSelectBrand[i].value){
+                filterSelectBrandElem.style.display = "none";
+            }
         }
-    }
-    let filterSelectReleaseDate = document.getElementById("filterSelectReleaseDate");
-    let filterSelectReleaseDateElem = document.createElement("option");
-    sortelems(i); // да как это сделать то
-    filterSelectReleaseDateElem.value = parsedData.Phones[i].releaseDate;
-    filterSelectReleaseDateElem.innerHTML = parsedData.Phones[i].releaseDate;
-    filterSelectReleaseDate.appendChild(filterSelectReleaseDateElem);
-    for (i = 0; i < filterSelectBrand.length-1; i++) {
-        if (filterSelectReleaseDateElem.value === filterSelectReleaseDate[i].value){
-            filterSelectReleaseDateElem.style.display = "none";
-        }
-    }
 
-    let filterSelectColor = document.getElementById("filterSelectColor");
-    let filterSelectColorElem = document.createElement("option");
-    filterSelectColorElem.value = parsedData.Phones[i].color;
-    filterSelectColorElem.innerHTML = parsedData.Phones[i].color;
-    filterSelectColor.appendChild(filterSelectColorElem);
-    for (i = 0; i < filterSelectColor.length-1; i++) {
-        if (filterSelectColorElem.value === filterSelectColor[i].value){
-            filterSelectColorElem.style.display = "none";
+        let filterSelectColor = document.getElementById("filterSelectColor");
+        let filterSelectColorElem = document.createElement("option");
+        filterSelectColorElem.value = parsedData.Phones[i].color;
+        filterSelectColorElem.innerHTML = parsedData.Phones[i].color;
+        filterSelectColor.appendChild(filterSelectColorElem);
+        for (i = 0; i < filterSelectColor.length-1; i++) {
+            if (filterSelectColorElem.value === filterSelectColor[i].value){
+                filterSelectColorElem.style.display = "none";
+            }
         }
-    }
-    let filterSelectPrice = document.getElementById("filterSelectPrice");
+        let filterSelectPrice = document.getElementById("filterSelectPrice");
 
-    let filterSelectMemory = document.getElementById("filterSelectMemory");
-    let filterSelectMemoryElem = document.createElement("option");
-    filterSelectMemoryElem.value = parsedData.Phones[i].memory;
-    filterSelectMemoryElem.innerHTML = parsedData.Phones[i].memory;
-    filterSelectMemory.appendChild(filterSelectMemoryElem);
-    for (i = 0; i < filterSelectMemory.length-1; i++) {
-        if (filterSelectMemoryElem.value === filterSelectMemory[i].value){
-            filterSelectMemoryElem.style.display = "none";
+        let filterSelectProcessor = document.getElementById("filterSelectProcessor");
+        let filterSelectProcessorElem = document.createElement("option");
+        filterSelectProcessorElem.value = parsedData.Phones[i].processor;
+        filterSelectProcessorElem.innerHTML = parsedData.Phones[i].processor;
+        filterSelectProcessor.appendChild(filterSelectProcessorElem);
+        for (i = 0; i < filterSelectProcessor.length-1; i++) {
+            if (filterSelectProcessorElem.value === filterSelectProcessor[i].value){
+                filterSelectProcessorElem.style.display = "none";
+            }
         }
+
+        arrayOfReleaseDates.push(parsedData.Phones[i].releaseDate);
+        arrayOfMemory.push(parsedData.Phones[i].memory);
+        arrayOfCamera.push(parsedData.Phones[i].camera);
+
+        arrayOfReleaseDates.sort(sortIntegers);
+        arrayOfMemory.sort(sortIntegers);
+        arrayOfCamera.sort(sortIntegers);
+
+        arrayOfReleaseDatesUpdated = arrayOfReleaseDates.filter((item, index) => arrayOfReleaseDates.indexOf(item) === index);
+        arrayOfMemoryUpdated = arrayOfMemory.filter((item, index) => arrayOfMemory.indexOf(item) === index);
+        arrayOfCameraUpdated = arrayOfCamera.filter((item, index) => arrayOfCamera.indexOf(item) === index);
     }
 
-    let filterSelectCamera = document.getElementById("filterSelectCamera");
-    let filterSelectCameraElem = document.createElement("option");
-    filterSelectCameraElem.value = parsedData.Phones[i].camera;
-    filterSelectCameraElem.innerHTML = parsedData.Phones[i].camera;
-    filterSelectCamera.appendChild(filterSelectCameraElem);
-    for (i = 0; i < filterSelectCamera.length-1; i++) {
-        if (filterSelectCameraElem.value === filterSelectCamera[i].value){
-            filterSelectCameraElem.style.display = "none";
-        }
+    for (let i = 0; i < arrayOfReleaseDatesUpdated.length; i++) {
+        let filterSelectReleaseDate = document.getElementById("filterSelectReleaseDate");
+        let filterSelectReleaseDateElem = document.createElement("option");
+        filterSelectReleaseDateElem.value = arrayOfReleaseDatesUpdated[i];
+        filterSelectReleaseDateElem.innerHTML = arrayOfReleaseDatesUpdated[i];
+        filterSelectReleaseDate.appendChild(filterSelectReleaseDateElem);
     }
-
-    let filterSelectProcessor = document.getElementById("filterSelectProcessor");
-    let filterSelectProcessorElem = document.createElement("option");
-    filterSelectProcessorElem.value = parsedData.Phones[i].processor;
-    filterSelectProcessorElem.innerHTML = parsedData.Phones[i].processor;
-    filterSelectProcessor.appendChild(filterSelectProcessorElem);
-    for (i = 0; i < filterSelectProcessor.length-1; i++) {
-        if (filterSelectProcessorElem.value === filterSelectProcessor[i].value){
-            filterSelectProcessorElem.style.display = "none";
-        }
+    for (let i = 0; i < arrayOfMemoryUpdated.length; i++) {
+        let filterSelectMemory = document.getElementById("filterSelectMemory");
+        let filterSelectMemoryElem = document.createElement("option");
+        filterSelectMemoryElem.value = arrayOfMemoryUpdated[i];
+        filterSelectMemoryElem.innerHTML = arrayOfMemoryUpdated[i];
+        filterSelectMemory.appendChild(filterSelectMemoryElem);
+    }
+    for (let i = 0; i < arrayOfCameraUpdated.length; i++) {
+        let filterSelectCamera = document.getElementById("filterSelectCamera");
+        let filterSelectCameraElem = document.createElement("option");
+        filterSelectCameraElem.value = arrayOfCameraUpdated[i];
+        filterSelectCameraElem.innerHTML = arrayOfCameraUpdated[i];
+        filterSelectCamera.appendChild(filterSelectCameraElem);
     }
 
     clearFilterSelects();
@@ -217,25 +233,25 @@ document.getElementById("filterSubmit").onclick = function() {
 
     for (let i = 0; i < parsedData.Phones.length; i++) {
         if (submitBrand != parsedData.Phones[i].brand && submitBrand != "") {
-            document.getElementById(`phoneid${i+1}`).style.display = "none";
+            document.getElementById(`phoneid${i}`).style.display = "none";
         }
         if (submitReleaseDate != parsedData.Phones[i].releaseDate && submitReleaseDate != "") {
-            document.getElementById(`phoneid${i+1}`).style.display = "none";
+            document.getElementById(`phoneid${i}`).style.display = "none";
         }
         if (submitColor != parsedData.Phones[i].color && submitColor != "") {
-            document.getElementById(`phoneid${i+1}`).style.display = "none";
+            document.getElementById(`phoneid${i}`).style.display = "none";
         }
         if (parsedData.Phones[i].price > submitPrice && submitPrice != "") {
-            document.getElementById(`phoneid${i+1}`).style.display = "none";
+            document.getElementById(`phoneid${i}`).style.display = "none";
         }
         if (submitMemory != parsedData.Phones[i].memory && submitMemory != "") {
-            document.getElementById(`phoneid${i+1}`).style.display = "none";
+            document.getElementById(`phoneid${i}`).style.display = "none";
         }
         if (submitCamera != parsedData.Phones[i].camera && submitCamera != "") {
-            document.getElementById(`phoneid${i+1}`).style.display = "none";
+            document.getElementById(`phoneid${i}`).style.display = "none";
         }
         if (submitProcessor != parsedData.Phones[i].processor && submitProcessor != "") {
-            document.getElementById(`phoneid${i+1}`).style.display = "none";
+            document.getElementById(`phoneid${i}`).style.display = "none";
         }
     }
 }
