@@ -71,6 +71,7 @@ margin-left: 300px;
 margin-top: 30px;
 max-height: 400px;
 }
+
 .descElem {
 font-weight: 400;
 font-size: 1.2em;
@@ -78,6 +79,7 @@ color: rgb(31, 31, 31);
 font-family: Arial, Helvetica, sans-serif;
 margin-bottom: 0.2em;
 }
+
 .descElemPrice {
 background-color: rgb(255, 203, 203);
 font-weight: 600;
@@ -85,6 +87,7 @@ color: black;
 border-radius: 20px;
 text-align: center;
 }
+
 .buyButton {
 position: absolute;
 background-color: rgb(168, 60, 60);

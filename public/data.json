@@ -1,1 +1,124 @@
-{"Phones":[{"brand":"Apple","model":"Apple iPhone 13","price":71999,"releaseDate":2021,"color":"Белый","OS":"iOS 15","memory":128,"camera":24,"processor":"Apple A15 Bionic","imageSrc":"https://c.dns-shop.ru/thumb/st4/fit/500/500/d7c6958e2c14682225ae71ad99b6b355/c9e6213264bc03bcdcd1b288fcfcd15e56332858c9f9e3c88cc75467fba289f6.jpg.webp","source":"https://www.dns-shop.ru/product/c852290ac1f9ed20/61-smartfon-apple-iphone-13-128-gb-belyj/"},{"brand":"Realme","model":"Realme Pro 9","price":26999,"releaseDate":2022,"color":"Чёрный","OS":"Android 12","memory":128,"camera":74,"processor":"Snapdragon 695","imageSrc":"https://c.dns-shop.ru/thumb/st4/fit/500/500/a1940db4dcceb3ffc3bff0388d18c618/dafe657dcf14c51e1bc6f18c6e35ca9cda800cebb60d4b3767ae7bb02b4ad3d4.jpg.webp","source":"https://www.dns-shop.ru/product/f68150e0798fed20/66-smartfon-realme-9-pro-128-gb-cernyj/"},{"brand":"Samsung","model":"Samsung Galaxy S21","price":55999,"releaseDate":2022,"color":"Чёрный","OS":"Android 12","memory":128,"camera":32,"processor":"Snapdragon 888","imageSrc":"https://c.dns-shop.ru/thumb/st1/fit/500/500/881462bf34ef66cef9f54108a453fc32/c53ffcdca5230d1efd6ef5c883a295ee0150efc790c006d37fbb4370a54caab0.jpg.webp","source":"https://www.dns-shop.ru/product/8095abeec9bb2eb0/64-smartfon-samsung-galaxy-s21-fe-128-gb-cernyj/"},{"brand":"Xiaomi","model":"Xiaomi Redmi 9A","price":6999,"releaseDate":2020,"color":"Серый","OS":"Android 10","memory":32,"camera":13,"processor":"MediaTek Helio G25","imageSrc":"https://c.dns-shop.ru/thumb/st4/fit/500/500/85b57168f63595bfde45ee67f14d7bd8/0a8694a84262992849ac45ee1dcc9d9a700ac4dd8ee34d9de92f77c5bf980616.jpg.webp","source":"https://www.dns-shop.ru/product/d2efa962b6893332/653-smartfon-xiaomi-redmi-9a-32-gb-seryj/"},{"brand":"Huawei","model":"Huawei P50 Pro","price":69999,"releaseDate":2022,"color":"Чёрный","OS":"Android 11","memory":256,"camera":167,"processor":"Snapdragon 888","imageSrc":"https://c.dns-shop.ru/thumb/st1/fit/500/500/78671752d6f8a0107cbbbcc6547d25f1/e1bbe0eee27904726b5df4b5916b3ddd9fdaffa765e3c23cd853ddf22b32092b.jpg.webp","source":"https://www.dns-shop.ru/product/046166517f17ed20/66-smartfon-huawei-p50-pro-256-gb-cernyj/"},{"brand":"Xiaomi","model":"Xiaomi Redmi 9C NFC","price":8999,"releaseDate":2020,"color":"Серый","OS":"Android 10","memory":64,"camera":15,"processor":"MediaTek Helio G35","imageSrc":"https://c.dns-shop.ru/thumb/st4/fit/500/500/e34ad43813a5f88905d7de5d93162c34/e39ffd305905c1bdc7025b2ddc2015f89e5fc9c3c7c6d8fd25af6ad3ac01efec.jpg.webp","source":"https://www.dns-shop.ru/product/54878c86b68b3332/653-smartfon-xiaomi-redmi-9c-nfc-64-gb-seryj/"},{"brand":"POCO","model":"POCO M4 Pro","price":21999,"releaseDate":2022,"color":"Чёрный","OS":"Android 11","memory":256,"camera":74,"processor":"MediaTek Helio G96","imageSrc":"https://c.dns-shop.ru/thumb/st4/fit/500/500/dd29a673a6b1663fb233a66aa9586ef8/f809d9e0066d0f3843b8ab966242d26cf756636e90f8a23e56880155d6b8bb43.jpg.webp","source":"https://www.dns-shop.ru/product/34c523988ebbed20/643-smartfon-poco-m4-pro-4g-256-gb-cernyj/characteristics/"},{"brand":"Samsung","model":"Samsung Galaxy A53","price":32999,"releaseDate":2022,"color":"Чёрный","OS":"Android 12","memory":256,"camera":86,"processor":"Exynos 1280","imageSrc":"https://c.dns-shop.ru/thumb/st1/fit/500/500/b5c8ec3de8040f73073564896082ac80/5cc252aa123044f21e7e18d36efddf58da90104463c01558b07f749b541a36b1.jpg.webp","source":"https://www.dns-shop.ru/product/a6db35d0b70e6200/65-smartfon-samsung-galaxy-a53-5g-256-gb-cernyj/characteristics/"},{"brand":"Xiaomi","model":"Xiaomi Redmi Note 10T","price":16999,"releaseDate":2021,"color":"Серый","OS":"Android 11","memory":128,"camera":52,"processor":"MediaTek Dimensity 700","imageSrc":"https://c.dns-shop.ru/thumb/st4/fit/500/500/4918c9b7d3ab3aa78485b58afb982ace/0c7e96ae9c03e8bce32cb9d727fe373b01a803579b91439baec55e83ac255ec1.jpg.webp","source":"https://www.dns-shop.ru/product/d22fedadad352eb1/649-smartfon-xiaomi-redmi-note-10t-128-gb-seryj/characteristics/"}]}
+{
+    "Phones": [
+      {
+        "brand": "Apple",
+        "model": "Apple iPhone 13",
+        "price": 71999,
+        "releaseDate": 2021,
+        "color": "Белый",
+        "OS": "iOS 15",
+        "memory": 128,
+        "camera": 24,
+        "processor": "Apple A15 Bionic",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st4/fit/500/500/d7c6958e2c14682225ae71ad99b6b355/c9e6213264bc03bcdcd1b288fcfcd15e56332858c9f9e3c88cc75467fba289f6.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/c852290ac1f9ed20/61-smartfon-apple-iphone-13-128-gb-belyj/"
+      },
+      {
+        "brand": "Realme",
+        "model": "Realme Pro 9",
+        "price": 26999,
+        "releaseDate": 2022,
+        "color": "Чёрный",
+        "OS": "Android 12",
+        "memory": 128,
+        "camera": 74,
+        "processor": "Snapdragon 695",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st4/fit/500/500/a1940db4dcceb3ffc3bff0388d18c618/dafe657dcf14c51e1bc6f18c6e35ca9cda800cebb60d4b3767ae7bb02b4ad3d4.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/f68150e0798fed20/66-smartfon-realme-9-pro-128-gb-cernyj/"
+      },
+      {
+        "brand": "Samsung",
+        "model": "Samsung Galaxy S21",
+        "price": 55999,
+        "releaseDate": 2022,
+        "color": "Чёрный",
+        "OS": "Android 12",
+        "memory": 128,
+        "camera": 32,
+        "processor": "Snapdragon 888",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st1/fit/500/500/881462bf34ef66cef9f54108a453fc32/c53ffcdca5230d1efd6ef5c883a295ee0150efc790c006d37fbb4370a54caab0.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/8095abeec9bb2eb0/64-smartfon-samsung-galaxy-s21-fe-128-gb-cernyj/"
+      },
+      {
+        "brand": "Xiaomi",
+        "model": "Xiaomi Redmi 9A",
+        "price": 6999,
+        "releaseDate": 2020,
+        "color": "Серый",
+        "OS": "Android 10",
+        "memory": 32,
+        "camera": 13,
+        "processor": "MediaTek Helio G25",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st4/fit/500/500/85b57168f63595bfde45ee67f14d7bd8/0a8694a84262992849ac45ee1dcc9d9a700ac4dd8ee34d9de92f77c5bf980616.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/d2efa962b6893332/653-smartfon-xiaomi-redmi-9a-32-gb-seryj/"
+      },
+      {
+        "brand": "Huawei",
+        "model": "Huawei P50 Pro",
+        "price": 69999,
+        "releaseDate": 2022,
+        "color": "Чёрный",
+        "OS": "Android 11",
+        "memory": 256,
+        "camera": 167,
+        "processor": "Snapdragon 888",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st1/fit/500/500/78671752d6f8a0107cbbbcc6547d25f1/e1bbe0eee27904726b5df4b5916b3ddd9fdaffa765e3c23cd853ddf22b32092b.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/046166517f17ed20/66-smartfon-huawei-p50-pro-256-gb-cernyj/"
+      },
+      {
+        "brand": "Xiaomi",
+        "model": "Xiaomi Redmi 9C NFC",
+        "price": 8999,
+        "releaseDate": 2020,
+        "color": "Серый",
+        "OS": "Android 10",
+        "memory": 64,
+        "camera": 15,
+        "processor": "MediaTek Helio G35",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st4/fit/500/500/e34ad43813a5f88905d7de5d93162c34/e39ffd305905c1bdc7025b2ddc2015f89e5fc9c3c7c6d8fd25af6ad3ac01efec.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/54878c86b68b3332/653-smartfon-xiaomi-redmi-9c-nfc-64-gb-seryj/"
+      },
+      {
+        "brand": "POCO",
+        "model": "POCO M4 Pro",
+        "price": 21999,
+        "releaseDate": 2022,
+        "color": "Чёрный",
+        "OS": "Android 11",
+        "memory": 256,
+        "camera": 74,
+        "processor": "MediaTek Helio G96",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st4/fit/500/500/dd29a673a6b1663fb233a66aa9586ef8/f809d9e0066d0f3843b8ab966242d26cf756636e90f8a23e56880155d6b8bb43.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/34c523988ebbed20/643-smartfon-poco-m4-pro-4g-256-gb-cernyj/characteristics/"
+      },
+      {
+        "brand": "Samsung",
+        "model": "Samsung Galaxy A53",
+        "price": 32999,
+        "releaseDate": 2022,
+        "color": "Чёрный",
+        "OS": "Android 12",
+        "memory": 256,
+        "camera": 86,
+        "processor": "Exynos 1280",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st1/fit/500/500/b5c8ec3de8040f73073564896082ac80/5cc252aa123044f21e7e18d36efddf58da90104463c01558b07f749b541a36b1.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/a6db35d0b70e6200/65-smartfon-samsung-galaxy-a53-5g-256-gb-cernyj/characteristics/"
+      },
+      {
+        "brand": "Xiaomi",
+        "model": "Xiaomi Redmi Note 10T",
+        "price": 16999,
+        "releaseDate": 2021,
+        "color": "Серый",
+        "OS": "Android 11",
+        "memory": 128,
+        "camera": 52,
+        "processor": "MediaTek Dimensity 700",
+        "imageSrc": "https://c.dns-shop.ru/thumb/st4/fit/500/500/4918c9b7d3ab3aa78485b58afb982ace/0c7e96ae9c03e8bce32cb9d727fe373b01a803579b91439baec55e83ac255ec1.jpg.webp",
+        "source": "https://www.dns-shop.ru/product/d22fedadad352eb1/649-smartfon-xiaomi-redmi-note-10t-128-gb-seryj/characteristics/"
+      },
+      {
+        "imageSrc": "https://c.dns-shop.ru/thumb/st4/fit/500/500/4918c9b7d3ab3aa78485b58afb982ace/0c7e96ae9c03e8bce32cb9d727fe373b01a803579b91439baec55e83ac255ec1.jpg.webp"
+      }
+    ]
+  }
